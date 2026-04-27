@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Свадебное приглашение • 30.05.2026</title>
+  <meta name="description" content="Свадебное приглашение • 30.05.2026" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f8f1ec;
+      --ink: #2f2b26;
+      --muted: #74675f;
+      --olive: #3c3a1f;
+      --berry: #c33967;
+      --rose: #e46b75;
+      --terracotta: #dd6d3e;
+      --peach: #efbc8f;
+      --blush: #f2dde2;
+      --fuchsia: #d92f7c;
+      --coral: #e85b5b;
+      --apricot: #f28a3c;
+      --cream: #f7ddd9;
+      --sage: #8b9b83;
+      --mist: #9fb7c9;
+      --sand: #d7b898;
+      --plum: #8b7281;
+      --black: #1a1a1a;
+      --line: rgba(47, 43, 38, 0.12);
+      --container: 620px;
+      --title-font: 'Playfair Display', serif;
+      --script-font: 'Marck Script', cursive;
+      --body-font: 'Inter', 'Arial', sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      background:
+        radial-gradient(circle at top left, rgba(217, 47, 124, 0.1), transparent 28%),
+        radial-gradient(circle at 30% 38%, rgba(242, 138, 60, 0.09), transparent 28%),
+        radial-gradient(circle at top right, rgba(232, 91, 91, 0.1), transparent 24%),
+        linear-gradient(180deg, #fbf6f2 0%, #f8f1ec 100%);
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: var(--body-font);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 24px 14px 48px;
+      background:
+        radial-gradient(circle at 12% 16%, rgba(217, 47, 124, 0.11), transparent 18%),
+        radial-gradient(circle at 24% 72%, rgba(139, 155, 131, 0.11), transparent 20%),
+        radial-gradient(circle at 88% 18%, rgba(242, 138, 60, 0.16), transparent 20%),
+        radial-gradient(circle at 72% 56%, rgba(232, 91, 91, 0.09), transparent 24%),
+        radial-gradient(circle at 50% 100%, rgba(247, 221, 217, 0.28), transparent 26%),
+        linear-gradient(180deg, #fff7f3 0%, #f9eee7 52%, #f4e7e0 100%);
+      overflow-x: hidden;
+    }
+
+    .page {
+      width: min(100%, var(--container));
+      position: relative;
+      isolation: isolate;
+    }
+
+    .invite {
+      position: relative;
+      padding: 8px 0 18px;
+      isolation: isolate;
+    }
+
+    .invite::before,
+    .invite::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      pointer-events: none;
+      z-index: -3;
+    }
+
+    .invite::before {
+      top: 24px;
+      width: min(94vw, 860px);
+      height: 240px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.14), rgba(255,255,255,0)),
+        radial-gradient(circle at 50% 18%, rgba(255,255,255,0.22), transparent 26%);
+      clip-path: polygon(0 88%, 10% 72%, 20% 84%, 31% 54%, 42% 76%, 54% 42%, 66% 74%, 78% 57%, 90% 80%, 100% 64%, 100% 100%, 0 100%);
+      opacity: 0.42;
+    }
+
+    .invite::after {
+      bottom: 12px;
+      width: min(96vw, 920px);
+      height: 180px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(255,255,255,0.22), transparent 34%),
+        linear-gradient(180deg, rgba(247, 221, 217, 0) 0%, rgba(242, 138, 60, 0.08) 52%, rgba(217, 47, 124, 0.12) 100%);
+      filter: blur(0.5px);
+      opacity: 0.78;
+    }
+
+    .section {
+      padding: 28px 18px;
+      position: relative;
+    }
+
+    .section:not(.hero) {
+      content-visibility: auto;
+      contain-intrinsic-size: 1px 560px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px) scale(0.985);
+      transition:
+        opacity 0.9s ease,
+        transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.08s; }
+    .reveal-delay-2 { transition-delay: 0.16s; }
+    .reveal-delay-3 { transition-delay: 0.24s; }
+
+    @keyframes floatDecor {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @keyframes driftSide {
+      0%, 100% { transform: translateX(0) translateY(0) rotate(0deg); }
+      50% { transform: translateX(6px) translateY(-10px) rotate(4deg); }
+    }
+
+    @keyframes sparklePulse {
+      0%, 100% {
+        opacity: 0.35;
+        transform: scale(0.9) rotate(0deg);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.08) rotate(8deg);
+      }
+    }
+
+    @keyframes softGlow {
+      0%, 100% {
+        box-shadow: 0 16px 36px rgba(217,47,124,0.12);
+      }
+      50% {
+        box-shadow: 0 20px 48px rgba(242,138,60,0.2);
+      }
+    }
+
+    @keyframes shimmerSweep {
+      0% { transform: translateX(-130%) skewX(-18deg); opacity: 0; }
+      20% { opacity: 0.22; }
+      100% { transform: translateX(190%) skewX(-18deg); opacity: 0; }
+    }
+
+    @keyframes gentleBob {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+
+    @keyframes borderFlow {
+      0% { background-position: 0% 50%, 0% 50%; }
+      100% { background-position: 0% 50%, 200% 50%; }
+    }
+
+    @keyframes festiveDrift {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-2px) scale(1.015); }
+    }
+
+    @keyframes dateGlow {
+      0%, 100% {
+        box-shadow:
+          0 0 0 1px rgba(255,255,255,0.56) inset,
+          0 0 24px rgba(217,47,124,0.32),
+          0 0 42px rgba(240,106,160,0.28),
+          0 0 74px rgba(255,209,102,0.18),
+          0 18px 42px rgba(217,47,124,0.24),
+          0 0 0 2px rgba(217,47,124,0.16);
+      }
+      50% {
+        box-shadow:
+          0 0 0 1px rgba(255,255,255,0.72) inset,
+          0 0 32px rgba(217,47,124,0.44),
+          0 0 58px rgba(240,106,160,0.42),
+          0 0 96px rgba(255,209,102,0.28),
+          0 22px 52px rgba(217,47,124,0.3),
+          0 0 0 2px rgba(255,209,102,0.24);
+        }
+    }
+
+    @keyframes sparklerBorder {
+      0%, 100% {
+        opacity: 0.92;
+        filter: blur(1.8px) brightness(1.14);
+        box-shadow:
+          0 0 16px rgba(255, 236, 178, 0.92),
+          0 0 30px rgba(255, 186, 88, 0.78),
+          0 0 48px rgba(255, 118, 54, 0.56),
+          0 0 70px rgba(239, 79, 150, 0.44);
+      }
+      50% {
+        opacity: 1;
+        filter: blur(2.8px) brightness(1.38);
+        box-shadow:
+          0 0 22px rgba(255, 245, 195, 1),
+          0 0 42px rgba(255, 198, 98, 0.94),
+          0 0 64px rgba(255, 126, 58, 0.74),
+          0 0 88px rgba(239, 79, 150, 0.58);
+      }
+    }
+
+    @keyframes rainbowShift {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 260% 50%; }
+    }
+
+    @keyframes titlePulse {
+      0%, 100% {
+        filter: drop-shadow(0 6px 18px rgba(217,47,124,0.22)) saturate(1);
+      }
+      50% {
+        filter: drop-shadow(0 12px 28px rgba(240,106,160,0.36)) saturate(1.12);
+      }
+    }
+
+    .section-decor {
+      position: absolute;
+      opacity: 0.08;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .section > *:not(.section-decor) {
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-decor.top-right { top: 8px; right: -34px; width: 48px; }
+    .section-decor.top-left { top: 10px; left: -34px; width: 46px; }
+    .section-decor.bottom-right { bottom: 10px; right: -30px; width: 46px; }
+    .section-decor.bottom-left { bottom: 8px; left: -28px; width: 42px; }
+
+    .ambient-sparkle {
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.56;
+    }
+
+    .ambient-sparkle.gold { color: rgba(242, 138, 60, 0.72); }
+    .ambient-sparkle.berry { color: rgba(217, 47, 124, 0.64); }
+    .ambient-sparkle svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .sparkle-hero {
+      top: 16px;
+      left: calc(50% - 150px);
+      width: 32px;
+      height: 32px;
+    }
+
+    .sparkle-timing {
+      top: 20px;
+      right: 36px;
+      width: 26px;
+      height: 26px;
+      animation-delay: 0.7s;
+    }
+
+    .sparkle-vibes {
+      bottom: 28px;
+      right: 18px;
+      width: 24px;
+      height: 24px;
+      animation-delay: 1.2s;
+    }
+
+    .hero {
+      padding-top: 12px;
+    }
+
+    .hero-photo {
+      position: relative;
+      aspect-ratio: 4 / 4.95;
+      border-radius: 28px;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(60,58,31,0.12), rgba(60,58,31,0.03)),
+        linear-gradient(180deg, #f6d2d7 0%, #f6b483 48%, #f9eee7 100%);
+      border: 1.3px solid rgba(47, 43, 38, 0.1);
+      display: grid;
+      place-items: center;
+      margin-bottom: 22px;
+      animation: softGlow 10s ease-in-out infinite;
+    }
+
+    .hero-photo::after,
+    .pet-photo::after,
+    .dress-card::after,
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(110deg, transparent 0%, rgba(255,255,255,0.12) 45%, rgba(255,255,255,0.34) 50%, rgba(255,255,255,0.12) 55%, transparent 100%);
+      transform: translateX(-130%) skewX(-18deg);
+      opacity: 0;
+    }
+
+    .hero-photo::after {
+      animation: shimmerSweep 11s ease-in-out infinite;
+    }
+
+    .hero-photo img,
+    .pet-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-photo img {
+      object-position: center bottom;
+      transform: scale(1);
+      transition: transform 1.3s ease;
+    }
+
+    .hero-photo.is-visible img,
+    .pet-photo.is-visible img {
+      transform: scale(1.03);
+    }
+
+    .sketch-bow,
+    .sketch-heart,
+    .sketch-star,
+    .sketch-ring,
+    .sketch-sparkle,
+    .sketch-paw,
+    .sketch-mini-heart,
+    .sketch-birds,
+    .sketch-diamond,
+    .sketch-leaf,
+    .page-decor {
+      position: absolute;
+      opacity: 0.12;
+      pointer-events: none;
+      z-index: -2;
+      transform-origin: center;
+    }
+
+    .hero-photo .sketch-bow,
+    .hero-photo .sketch-heart,
+    .hero-photo .sketch-star,
+    .hero-photo .sketch-ring,
+    .hero-photo .sketch-sparkle,
+    .pet-photo .sketch-paw,
+    .pet-photo .sketch-mini-heart,
+    .pet-photo .sketch-birds,
+    .pet-photo .sketch-diamond,
+    .pet-photo .sketch-leaf {
+      display: none;
+    }
+
+    .page-decor.left-1 { top: 96px; left: -98px; width: 44px; }
+    .page-decor.left-2 { top: 332px; left: -122px; width: 58px; }
+    .page-decor.left-3 { top: 662px; left: -104px; width: 42px; }
+    .page-decor.left-4 { top: 1012px; left: -126px; width: 58px; }
+    .page-decor.left-5 { top: 1428px; left: -108px; width: 48px; }
+    .page-decor.right-1 { top: 134px; right: -116px; width: 52px; }
+    .page-decor.right-2 { top: 474px; right: -126px; width: 60px; }
+    .page-decor.right-3 { top: 830px; right: -102px; width: 46px; }
+    .page-decor.right-4 { top: 1214px; right: -132px; width: 64px; }
+    .page-decor.right-5 { top: 1618px; right: -110px; width: 48px; }
+    .page-decor.left-6 { top: 206px; left: -148px; width: 96px; opacity: 0.1; }
+    .page-decor.left-7 { top: 1298px; left: -150px; width: 84px; opacity: 0.1; }
+    .page-decor.left-8 { top: 1868px; left: -124px; width: 60px; opacity: 0.11; }
+    .page-decor.left-9 { top: 2248px; left: -142px; width: 88px; opacity: 0.1; }
+    .page-decor.left-10 { top: 2580px; left: -118px; width: 52px; opacity: 0.11; }
+    .page-decor.left-11 { top: 2890px; left: -138px; width: 76px; opacity: 0.1; }
+    .page-decor.left-12 { top: 3230px; left: -120px; width: 58px; opacity: 0.11; }
+    .page-decor.right-6 { top: 742px; right: -152px; width: 110px; opacity: 0.1; }
+    .page-decor.right-7 { top: 1486px; right: -148px; width: 96px; opacity: 0.1; }
+    .page-decor.right-8 { top: 2048px; right: -132px; width: 62px; opacity: 0.11; }
+    .page-decor.right-9 { top: 2360px; right: -146px; width: 90px; opacity: 0.1; }
+    .page-decor.right-10 { top: 2720px; right: -126px; width: 54px; opacity: 0.11; }
+    .page-decor.right-11 { top: 3045px; right: -140px; width: 84px; opacity: 0.1; }
+    .page-decor.right-12 { top: 3360px; right: -122px; width: 56px; opacity: 0.11; }
+    .page-decor.center-top { top: 22px; left: 50%; transform: translateX(-50%); width: 136px; opacity: 0.08; }
+    .page-decor.center-bottom { bottom: 48px; left: 50%; transform: translateX(-50%); width: 150px; opacity: 0.09; }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 8px;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(195, 57, 103, 0.86);
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      font-family: var(--title-font);
+      font-weight: 500;
+      line-height: 0.98;
+    }
+
+    h1 {
+      font-size: clamp(46px, 10vw, 72px);
+      letter-spacing: 0.01em;
+    }
+
+    h2 {
+      font-size: clamp(36px, 7vw, 50px);
+      margin-bottom: 12px;
+    }
+
+    h3 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin: 0;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    .hero-copy {
+      text-align: center;
+      max-width: 36rem;
+      margin: 0 auto;
+    }
+
+    .hero .eyebrow {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 0 0.05em 0.1em;
+      font-family: var(--title-font);
+      font-size: clamp(32px, 8vw, 60px);
+      line-height: 1.08;
+      letter-spacing: 0.01em;
+      text-transform: none;
+      background: linear-gradient(90deg, #c12b75 0%, #d92f7c 24%, #f06aa0 50%, #cf4d86 76%, #c12b75 100%);
+      background-size: 360% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      filter: drop-shadow(0 3px 10px rgba(193, 43, 117, 0.16));
+      overflow: visible;
+      will-change: background-position, filter, transform;
+      animation: rainbowShift 3.8s linear infinite, titlePulse 2.4s ease-in-out infinite, festiveDrift 4.8s ease-in-out infinite;
+    }
+
+    .names-block {
+      margin: 6px auto 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .names-script {
+      font-family: var(--script-font);
+      font-size: clamp(56px, 13vw, 92px);
+      line-height: 0.9;
+      letter-spacing: 0.01em;
+      background: linear-gradient(90deg, #bf2b74 0%, #d92f7c 24%, #f06aa0 50%, #d74b84 74%, #bf2b74 100%);
+      background-size: 320% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      filter: drop-shadow(0 4px 12px rgba(193, 43, 117, 0.18));
+      will-change: background-position, filter, transform;
+      animation: rainbowShift 3.6s linear infinite, titlePulse 2.3s ease-in-out infinite, festiveDrift 4.4s ease-in-out infinite;
+    }
+
+    .names-amp {
+      font-family: var(--script-font);
+      font-size: clamp(40px, 9vw, 62px);
+      line-height: 0.9;
+      margin: -8px 0 -2px;
+      background: linear-gradient(90deg, #d84b8f 0%, #c12b75 48%, #ea5a95 100%);
+      background-size: 300% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      filter: drop-shadow(0 3px 8px rgba(193, 43, 117, 0.16));
+      will-change: background-position, filter, transform;
+      animation: rainbowShift 3.4s linear infinite reverse, titlePulse 2.1s ease-in-out infinite, festiveDrift 4s ease-in-out infinite;
+    }
+
+    .names-line {
+      width: 150px;
+      height: 1px;
+      background: rgba(47,43,38,0.16);
+      margin-top: 10px;
+    }
+
+    .date-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin: 22px 0 18px;
+      padding: 22px 36px;
+      min-width: min(100%, 360px);
+      border-radius: 26px;
+      border: 4px solid #ef4f96;
+      background: #ffffff !important;
+      box-shadow:
+        0 20px 48px rgba(217,47,124,0.24),
+        0 0 22px rgba(255, 184, 88, 0.2),
+        0 0 0 1px rgba(255,255,255,0.48) inset;
+      color: #c12b75;
+      font-family: var(--title-font);
+      font-size: clamp(28px, 5.8vw, 42px);
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      position: relative;
+      overflow: visible;
+      z-index: 0;
+      will-change: box-shadow;
+      animation: dateGlow 2.1s ease-in-out infinite;
+    }
+
+    .date-pill::before {
+      content: "";
+      position: absolute;
+      inset: -5px;
+      border-radius: 30px;
+      border: 3px solid rgba(255, 230, 170, 1);
+      background:
+        linear-gradient(120deg, rgba(255, 247, 215, 0.24), rgba(255, 199, 96, 0.38), rgba(255, 122, 48, 0.24), rgba(239, 79, 150, 0.18), rgba(255, 218, 132, 0.28));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      pointer-events: none;
+      z-index: 1;
+      animation: sparklerBorder 1.4s ease-in-out infinite, borderFlow 2.8s linear infinite;
+    }
+
+    .date-pill::after {
+      content: none;
+    }
+
+    .lead {
+      color: var(--muted);
+      max-width: 33ch;
+      margin: 0 auto;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: 14px 0 0;
+      color: var(--berry);
+      opacity: 0.95;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      width: 70px;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(217,47,124,0.08), rgba(242,138,60,0.42), rgba(217,47,124,0.08));
+    }
+
+    .pet-side {
+      margin-top: 18px;
+    }
+
+    .pet-side-grid {
+      display: grid;
+      grid-template-columns: 108px 1fr 108px;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .pet-stack {
+      display: grid;
+      gap: 14px;
+    }
+
+    .pet-text-center {
+      text-align: center;
+      max-width: 30rem;
+      margin: 0 auto;
+    }
+
+    .pet-photo {
+      position: relative;
+      border-radius: 22px;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(239,188,143,0.32), rgba(242,221,226,0.32)),
+        linear-gradient(180deg, #f4ebe5 0%, #f8f1ec 100%);
+      border: 1.2px solid rgba(47,43,38,0.1);
+      min-height: 140px;
+    }
+
+    .pet-photo.tall {
+      min-height: 188px;
+    }
+
+    .timeline {
+      --timeline-axis: 18px;
+      display: grid;
+      gap: 10px;
+      margin-top: 16px;
+      position: relative;
+      padding: 6px 0;
+    }
+
+    .timeline-path {
+      position: absolute;
+      top: 6px;
+      left: 0;
+      width: 40px;
+      height: calc(100% - 12px);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.9;
+    }
+
+    .timeline-path svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 14px;
+      padding: 18px 0;
+      position: relative;
+      z-index: 1;
+      transition: transform 0.55s ease;
+    }
+
+    .timeline-item.optional {
+      padding: 18px 0;
+    }
+
+    .timeline-item.optional .time {
+      color: rgba(95,81,73,0.96);
+    }
+
+    .timeline-item.optional .time::before {
+      background: linear-gradient(135deg, rgba(116,103,95,0.7), rgba(180,167,156,0.9));
+      box-shadow:
+        0 0 0 4px rgba(255,255,255,0.9),
+        0 6px 14px rgba(116,103,95,0.12);
+    }
+
+    .timeline-item.optional::after {
+      background: linear-gradient(90deg, rgba(116,103,95,0.38), rgba(180,167,156,0));
+    }
+
+    .timeline-item.optional strong,
+    .timeline-item.optional p,
+    .timeline-item.optional .link {
+      color: rgba(83,72,66,0.96);
+    }
+
+    .optional-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 6px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(116,103,95,0.92);
+      background: linear-gradient(135deg, rgba(255,255,255,0.92), rgba(245,239,234,0.94));
+      border: 1px solid rgba(116,103,95,0.18);
+    }
+
+    .timeline-item.is-visible {
+      box-shadow: none;
+    }
+
+    .time {
+      font-size: 22px;
+      font-family: var(--title-font);
+      align-self: start;
+      color: var(--olive);
+      position: relative;
+      padding-left: 34px;
+    }
+
+    .time::before {
+      content: "";
+      position: absolute;
+      top: 12px;
+      left: calc(var(--timeline-axis) - 6px);
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--fuchsia), var(--apricot));
+      box-shadow:
+        0 0 0 4px rgba(255,255,255,0.9),
+        0 8px 16px rgba(217,47,124,0.18);
+    }
+
+    .timeline-item:nth-child(odd) .time::before {
+      background: linear-gradient(135deg, var(--apricot), var(--berry));
+    }
+
+    .timeline-item strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 16px;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .link {
+      display: inline-block;
+      margin-top: 6px;
+      color: var(--berry);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .dress-layout {
+      display: grid;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .dress-card {
+      border: 1px solid rgba(47,43,38,0.1);
+      border-radius: 22px;
+      padding: 18px 16px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.72), rgba(255,255,255,0.48)),
+        radial-gradient(circle at top right, rgba(242,138,60,0.1), transparent 34%),
+        radial-gradient(circle at bottom left, rgba(217,47,124,0.08), transparent 36%);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.7s ease, box-shadow 0.7s ease;
+    }
+
+    .dress-card.is-visible {
+      transform: translateY(0);
+      box-shadow: 0 18px 36px rgba(217,47,124,0.08);
+    }
+
+    .dress-card.is-visible::after,
+    .pet-photo.is-visible::after,
+    .timeline-item.is-visible::before {
+      animation: shimmerSweep 7.2s ease-out 1;
+    }
+
+    .dress-card-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .dress-card-head p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .palette {
+      display: grid;
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .palette.women,
+    .palette.men {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .swatch {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-align: left;
+      padding: 12px 14px;
+      border: 1px solid rgba(47,43,38,0.08);
+      border-radius: 18px;
+      background: rgba(255,255,255,0.62);
+      min-width: 0;
+    }
+
+    .swatch-color {
+      width: 38px;
+      min-width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      border: 1.6px solid rgba(47,43,38,0.16);
+      box-shadow: inset 0 0 0 4px rgba(255,255,255,0.22);
+    }
+
+    .swatch span {
+      display: block;
+      font-size: 13px;
+      color: var(--ink);
+      line-height: 1.3;
+      overflow-wrap: anywhere;
+    }
+
+    .dress-tip {
+      margin-top: 12px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .dress-warning {
+      margin-top: 12px;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(217,47,124,0.12), rgba(242,138,60,0.14));
+      border: 1px solid rgba(217,47,124,0.14);
+      color: var(--ink);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .looks {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .look-card {
+      min-height: 196px;
+      border: 1px solid rgba(47,43,38,0.08);
+      border-radius: 20px;
+      padding: 14px;
+      background: rgba(255,255,255,0.26);
+    }
+
+    .look-card svg {
+      width: 100%;
+      height: 112px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .look-card strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 15px;
+    }
+
+    .gift-text {
+      max-width: 38rem;
+    }
+
+    .details-note {
+      margin-top: 14px;
+    }
+
+    .rsvp {
+      display: grid;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .field {
+      display: grid;
+      gap: 6px;
+      border-radius: 18px;
+    }
+
+    label {
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1.4px solid rgba(47,43,38,0.12);
+      border-radius: 16px;
+      padding: 14px 16px;
+      font: inherit;
+      color: var(--ink);
+      background: rgba(255,255,255,0.58);
+      outline: none;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: rgba(195,57,103,0.35);
+      box-shadow: 0 0 0 4px rgba(195,57,103,0.08);
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+      line-height: 1.6;
+    }
+
+    .submit {
+      appearance: none;
+      border: none;
+      padding: 16px 18px;
+      border-radius: 999px;
+      font: inherit;
+      font-size: 15px;
+      cursor: pointer;
+      color: #fff;
+      background: linear-gradient(135deg, var(--fuchsia), var(--apricot));
+      box-shadow: 0 12px 24px rgba(217,47,124,0.22);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 30px rgba(217,47,124,0.28);
+    }
+
+    .form-hint,
+    .footer-note {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .footer-note {
+      text-align: center;
+      padding-top: 8px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal,
+      .reveal.is-visible,
+      .section-decor,
+      .page-decor,
+      .ambient-sparkle,
+      .time {
+        opacity: 1;
+        transform: none;
+        transition: none;
+        animation: none;
+      }
+      .hero-photo::after,
+      .pet-photo::after,
+      .dress-card::after,
+      .timeline-item::before {
+        display: none;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .section { padding: 24px 16px; }
+      .page-decor {
+        opacity: 0.07;
+      }
+      .page-decor.left-1,
+      .page-decor.left-2,
+      .page-decor.left-3,
+      .page-decor.left-4,
+      .page-decor.left-5,
+      .page-decor.left-6,
+      .page-decor.left-7,
+      .page-decor.left-8,
+      .page-decor.left-9,
+      .page-decor.left-10,
+      .page-decor.left-11,
+      .page-decor.left-12 {
+        left: -72px;
+      }
+      .page-decor.right-1,
+      .page-decor.right-2,
+      .page-decor.right-3,
+      .page-decor.right-4,
+      .page-decor.right-5,
+      .page-decor.right-6,
+      .page-decor.right-7,
+      .page-decor.right-8,
+      .page-decor.right-9,
+      .page-decor.right-10,
+      .page-decor.right-11,
+      .page-decor.right-12 {
+        right: -76px;
+      }
+      .pet-side-grid {
+        grid-template-columns: 84px 1fr 84px;
+        gap: 12px;
+      }
+      .looks,
+      .palette.women,
+      .palette.men {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .page { width: min(100%, 100vw); }
+      .invite::before {
+        top: 52px;
+        width: min(110vw, 520px);
+        height: 168px;
+      }
+      .invite::after {
+        width: min(112vw, 540px);
+        height: 136px;
+      }
+      .page-decor.center-top,
+      .page-decor.center-bottom,
+      .page-decor.left-6,
+      .page-decor.left-7,
+      .page-decor.left-8,
+      .page-decor.left-9,
+      .page-decor.left-10,
+      .page-decor.left-11,
+      .page-decor.left-12,
+      .page-decor.right-6,
+      .page-decor.right-7,
+      .page-decor.right-8,
+      .page-decor.right-9,
+      .page-decor.right-10,
+      .page-decor.right-11,
+      .page-decor.right-12,
+      .ambient-sparkle {
+        display: none;
+      }
+      .hero-photo { aspect-ratio: 4 / 5.2; }
+      .pet-side-grid {
+        grid-template-columns: 72px 1fr 72px;
+        gap: 10px;
+      }
+      .pet-photo { min-height: 110px; }
+      .pet-photo.tall { min-height: 146px; }
+      .looks {
+        grid-template-columns: 1fr;
+      }
+      .palette.women,
+      .palette.men {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .swatch {
+        padding: 10px;
+        gap: 8px;
+      }
+      .swatch-color {
+        width: 34px;
+        min-width: 34px;
+        height: 34px;
+      }
+      .swatch span {
+        font-size: 12px;
+      }
+      .timeline-item { grid-template-columns: 74px 1fr; }
+      .timeline-path {
+        width: 34px;
+      }
+      .timeline-item::after {
+        left: calc(var(--timeline-axis) + 14px);
+        width: 18px;
+      }
+      .time { font-size: 20px; }
+      .names-script { font-size: 54px; }
+      .date-pill {
+        min-width: 100%;
+        padding: 18px 20px;
+        font-size: clamp(24px, 7.6vw, 34px);
+        letter-spacing: 0.16em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <article class="invite">
+      <svg class="page-decor center-top decor-slow" viewBox="0 0 160 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 36C22 26 32 18 44 10C54 18 64 26 78 36" stroke="#6c8796" stroke-width="3" stroke-linecap="round"/><path d="M54 24C60 18 64 14 70 10C80 18 92 28 112 40" stroke="#6c8796" stroke-width="3" stroke-linecap="round"/><path d="M98 30C108 22 116 16 126 10C136 16 144 24 152 32" stroke="#6c8796" stroke-width="3" stroke-linecap="round"/></svg>
+      <svg class="page-decor left-1 decor-fast" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 40C22 37 7 28 7 16C7 10 11 6 17 6C21 6 24 8 24 12C24 8 27 6 31 6C37 6 41 10 41 16C41 28 26 37 24 40Z" stroke="#2f2b26" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg class="page-decor left-2 decor-delay-1" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="18" r="4.5" stroke="#2f2b26" stroke-width="2.8"/><circle cx="27" cy="13" r="4.5" stroke="#2f2b26" stroke-width="2.8"/><circle cx="38" cy="18" r="4.5" stroke="#2f2b26" stroke-width="2.8"/><circle cx="23" cy="31" r="8" stroke="#2f2b26" stroke-width="2.8"/></svg>
+      <svg class="page-decor left-3 decor-slow" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 4L25 18L40 22L25 26L22 40L18 26L4 22L18 18L22 4Z" stroke="#2f2b26" stroke-width="2.6" stroke-linejoin="round"/></svg>
+      <svg class="page-decor left-4 decor-delay-2" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 22H36V40H14V22Z" stroke="#2f2b26" stroke-width="2.8"/><path d="M25 22V40" stroke="#2f2b26" stroke-width="2.8"/><path d="M10 22H40V16H10V22Z" stroke="#2f2b26" stroke-width="2.8"/></svg>
+      <svg class="page-decor left-5 decor-fast decor-delay-3" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 34C14 24 18 16 24 8C30 16 34 24 40 34" stroke="#2f2b26" stroke-width="2.8" stroke-linecap="round"/><path d="M17 20H31" stroke="#2f2b26" stroke-width="2.8" stroke-linecap="round"/></svg>
+      <svg class="page-decor left-6 decor-slow" viewBox="0 0 120 72" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 60C16 48 24 38 34 26C42 34 50 44 62 60" stroke="#7aa0b2" stroke-width="3" stroke-linecap="round"/><path d="M42 60C52 46 60 36 72 18C82 32 92 44 114 60" stroke="#7aa0b2" stroke-width="3" stroke-linecap="round"/></svg>
+      <svg class="page-decor left-7 decor-delay-1" viewBox="0 0 120 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 24C14 18 20 18 30 24C40 30 48 30 58 24C68 18 76 18 86 24C96 30 104 30 116 22" stroke="#7aa0b2" stroke-width="3" stroke-linecap="round"/><path d="M10 34C20 29 28 29 36 34C46 39 56 39 66 34C76 29 86 29 96 34" stroke="#7aa0b2" stroke-width="3" stroke-linecap="round"/></svg>
+      <svg class="page-decor left-8 decor-fast" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 4L25 18L40 22L25 26L22 40L18 26L4 22L18 18L22 4Z" stroke="#2f2b26" stroke-width="2.6" stroke-linejoin="round"/></svg>
+      <svg class="page-decor left-9 decor-slow decor-delay-2" viewBox="0 0 120 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 24C14 18 20 18 30 24C40 30 48 30 58 24C68 18 76 18 86 24C96 30 104 30 116 22" stroke="#7aa0b2" stroke-width="3" stroke-linecap="round"/><path d="M10 34C20 29 28 29 36 34C46 39 56 39 66 34C76 29 86 29 96 34" stroke="#7aa0b2" stroke-width="3" stroke-linecap="round"/></svg>
+      <svg class="page-decor left-10 decor-fast decor-delay-1" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 40C22 37 7 28 7 16C7 10 11 6 17 6C21 6 24 8 24 12C24 8 27 6 31 6C37 6 41 10 41 16C41 28 26 37 24 40Z" stroke="#2f2b26" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg class="page-decor left-11 decor-slow decor-delay-3" viewBox="0 0 120 74" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 62C22 48 30 36 40 22C50 30 60 42 74 62" stroke="#7aa0b2" stroke-width="3" stroke-linecap="round"/><path d="M44 62C58 48 70 30 82 12C92 26 104 42 114 52" stroke="#7aa0b2" stroke-width="3" stroke-linecap="round"/></svg>
+      <svg class="page-decor left-12 decor-fast decor-delay-2" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="18" r="4.5" stroke="#2f2b26" stroke-width="2.8"/><circle cx="27" cy="13" r="4.5" stroke="#2f2b26" stroke-width="2.8"/><circle cx="38" cy="18" r="4.5" stroke="#2f2b26" stroke-width="2.8"/><circle cx="23" cy="31" r="8" stroke="#2f2b26" stroke-width="2.8"/></svg>
+      <svg class="page-decor right-1 decor-fast decor-delay-1" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="21" cy="21" r="7" stroke="#2f2b26" stroke-width="2.8"/><path d="M31 19L35 23L44 14" stroke="#2f2b26" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg class="page-decor right-2 decor-delay-2" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L31 16L20 34L9 16L20 6Z" stroke="#2f2b26" stroke-width="2.8" stroke-linejoin="round"/></svg>
+      <svg class="page-decor right-3 decor-slow" viewBox="0 0 60 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 14C10 10 14 10 18 14" stroke="#2f2b26" stroke-width="2.8" stroke-linecap="round"/><path d="M24 10C28 6 32 6 36 10" stroke="#2f2b26" stroke-width="2.8" stroke-linecap="round"/><path d="M42 14C46 10 50 10 54 14" stroke="#2f2b26" stroke-width="2.8" stroke-linecap="round"/></svg>
+      <svg class="page-decor right-4 decor-delay-3" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 34C18 26 20 16 24 10C28 16 30 26 38 34" stroke="#2f2b26" stroke-width="2.8" stroke-linecap="round"/><path d="M18 18C20 22 22 24 24 26C26 24 28 22 30 18" stroke="#2f2b26" stroke-width="2.8" stroke-linecap="round"/></svg>
+      <svg class="page-decor right-5 decor-fast" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 40C22 37 7 28 7 16C7 10 11 6 17 6C21 6 24 8 24 12C24 8 27 6 31 6C37 6 41 10 41 16C41 28 26 37 24 40Z" stroke="#2f2b26" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg class="page-decor right-6 decor-slow decor-delay-1" viewBox="0 0 132 52" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 32C18 24 28 24 40 32C52 40 64 40 76 32C88 24 100 24 112 32C118 36 122 37 126 36" stroke="#7aa0b2" stroke-width="3" stroke-linecap="round"/><path d="M16 44C24 40 34 40 42 44C50 48 58 48 66 44C74 40 84 40 92 44C100 48 110 48 118 44" stroke="#7aa0b2" stroke-width="3" stroke-linecap="round"/></svg>
+      <svg class="page-decor right-7 decor-delay-2" viewBox="0 0 120 74" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 62C22 48 30 36 40 22C50 30 60 42 74 62" stroke="#7aa0b2" stroke-width="3" stroke-linecap="round"/><path d="M44 62C58 48 70 30 82 12C92 26 104 42 114 52" stroke="#7aa0b2" stroke-width="3" stroke-linecap="round"/></svg>
+      <svg class="page-decor right-8 decor-fast decor-delay-3" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 34C18 26 20 16 24 10C28 16 30 26 38 34" stroke="#2f2b26" stroke-width="2.8" stroke-linecap="round"/><path d="M18 18C20 22 22 24 24 26C26 24 28 22 30 18" stroke="#2f2b26" stroke-width="2.8" stroke-linecap="round"/></svg>
+      <svg class="page-decor right-9 decor-slow" viewBox="0 0 132 52" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 32C18 24 28 24 40 32C52 40 64 40 76 32C88 24 100 24 112 32C118 36 122 37 126 36" stroke="#7aa0b2" stroke-width="3" stroke-linecap="round"/><path d="M16 44C24 40 34 40 42 44C50 48 58 48 66 44C74 40 84 40 92 44C100 48 110 48 118 44" stroke="#7aa0b2" stroke-width="3" stroke-linecap="round"/></svg>
+      <svg class="page-decor right-10 decor-fast decor-delay-1" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 4L25 18L40 22L25 26L22 40L18 26L4 22L18 18L22 4Z" stroke="#2f2b26" stroke-width="2.6" stroke-linejoin="round"/></svg>
+      <svg class="page-decor right-11 decor-slow decor-delay-2" viewBox="0 0 120 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 24C14 18 20 18 30 24C40 30 48 30 58 24C68 18 76 18 86 24C96 30 104 30 116 22" stroke="#7aa0b2" stroke-width="3" stroke-linecap="round"/><path d="M10 34C20 29 28 29 36 34C46 39 56 39 66 34C76 29 86 29 96 34" stroke="#7aa0b2" stroke-width="3" stroke-linecap="round"/></svg>
+      <svg class="page-decor right-12 decor-fast decor-delay-3" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 40C22 37 7 28 7 16C7 10 11 6 17 6C21 6 24 8 24 12C24 8 27 6 31 6C37 6 41 10 41 16C41 28 26 37 24 40Z" stroke="#2f2b26" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg class="page-decor center-bottom decor-slow decor-delay-2" viewBox="0 0 160 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 18C20 10 28 10 40 18C52 26 64 26 76 18C88 10 100 10 112 18C124 26 136 26 152 16" stroke="#7aa0b2" stroke-width="3" stroke-linecap="round"/><path d="M16 30C28 24 38 24 48 30C58 36 70 36 80 30C90 24 102 24 112 30C122 36 134 36 144 30" stroke="#7aa0b2" stroke-width="3" stroke-linecap="round"/></svg>
+      <section class="section hero reveal is-visible">
+        <div class="hero-photo reveal is-visible">
+          <!-- ЗАМЕНИ src на свою фотографию жениха и невесты -->
+          <img src="./мы.jpg" alt="Жених и невеста" />
+          <svg class="sketch-bow" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17 49C29 29 43 26 55 39C61 45 66 53 60 61C48 60 37 58 17 49Z" stroke="#2f2b26" stroke-width="3" stroke-linecap="round"/>
+            <path d="M103 49C91 29 77 26 65 39C59 45 54 53 60 61C72 60 83 58 103 49Z" stroke="#2f2b26" stroke-width="3" stroke-linecap="round"/>
+            <path d="M58 40C55 49 57 57 60 62C64 56 65 49 62 40" stroke="#2f2b26" stroke-width="3" stroke-linecap="round"/>
+            <path d="M60 62C57 69 55 74 49 78" stroke="#2f2b26" stroke-width="3" stroke-linecap="round"/>
+            <path d="M61 62C64 68 67 73 72 78" stroke="#2f2b26" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <svg class="sketch-heart" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 40C22 37 7 28 7 16C7 10 11 6 17 6C21 6 24 8 24 12C24 8 27 6 31 6C37 6 41 10 41 16C41 28 26 37 24 40Z" stroke="#2f2b26" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <svg class="sketch-star" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 4L25 18L40 22L25 26L22 40L18 26L4 22L18 18L22 4Z" stroke="#2f2b26" stroke-width="2.6" stroke-linejoin="round"/>
+          </svg>
+          <svg class="sketch-ring" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="28" cy="42" r="16" stroke="#2f2b26" stroke-width="2.8"/>
+            <circle cx="44" cy="42" r="16" stroke="#2f2b26" stroke-width="2.8"/>
+            <path d="M36 11L40 19L49 20L43 27L44 36L36 31L28 36L29 27L23 20L32 19L36 11Z" stroke="#2f2b26" stroke-width="2.8" stroke-linejoin="round"/>
+          </svg>
+          <svg class="sketch-sparkle" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M25 6L28 20L44 25L28 30L25 44L21 30L6 25L21 20L25 6Z" stroke="#2f2b26" stroke-width="2.6" stroke-linejoin="round"/>
+          </svg>
+          </div>
+
+        <div class="hero-copy reveal is-visible reveal-delay-1">
+          <span class="eyebrow">Свадебное приглашение</span>
+          <div class="names-block">
+            <div class="names-script">Дима</div>
+            <div class="names-amp">и</div>
+            <div class="names-script">Дана</div>
+            <div class="names-line"></div>
+          </div>
+          <div class="date-pill">30 • 05 • 2026</div>
+          <p class="lead">Будем счастливы разделить с вами день, в котором станет чуть больше любви, смеха и красивых объятий.</p>
+          <div class="divider">✦</div>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <svg class="section-decor top-right" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 40C22 37 7 28 7 16C7 10 11 6 17 6C21 6 24 8 24 12C24 8 27 6 31 6C37 6 41 10 41 16C41 28 26 37 24 40Z" stroke="#2f2b26" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="ambient-sparkle gold sparkle-timing" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L22.5 17.5L34 20L22.5 22.5L20 34L17.5 22.5L6 20L17.5 17.5L20 6Z" fill="currentColor"/></svg>
+        </div>
+        <span class="eyebrow">О нас</span>
+        <h2>Очень ждём вас</h2>
+        <div class="pet-side">
+          <div class="pet-side-grid">
+            <div class="pet-stack">
+              <div class="pet-photo reveal reveal-delay-1 tall">
+                <svg class="sketch-paw" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="16" r="4" stroke="#2f2b26" stroke-width="2.8"/><circle cx="24" cy="12" r="4" stroke="#2f2b26" stroke-width="2.8"/><circle cx="34" cy="16" r="4" stroke="#2f2b26" stroke-width="2.8"/><circle cx="20" cy="28" r="7" stroke="#2f2b26" stroke-width="2.8"/></svg>
+                <img src="./собака1.JPG" alt="Наша собака" />
+                </div>
+              <div class="pet-photo reveal reveal-delay-2">
+                <svg class="sketch-mini-heart" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 40C22 37 7 28 7 16C7 10 11 6 17 6C21 6 24 8 24 12C24 8 27 6 31 6C37 6 41 10 41 16C41 28 26 37 24 40Z" stroke="#2f2b26" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <img src="./кошка6.jpg" alt="Наша кошка" />
+                </div>
+            </div>
+            <div class="pet-text-center">
+              <p>Для нас особенно ценно провести этот день рядом с любимыми людьми — в тёплой, красивой и очень живой атмосфере. Нам хочется много объятий, смеха, разговоров и счастливых моментов, которые мы разделим вместе с вами. С нами на празднике будет собака, поэтому, если у вас есть аллергия, пожалуйста, не забудьте таблетки. А дома тем временем останется кошка — хранить порядок, контролировать обстановку и мысленно следить, чтобы всё прошло идеально.</p>
+            </div>
+            <div class="pet-stack">
+              <div class="pet-photo reveal reveal-delay-1">
+                <svg class="sketch-birds" viewBox="0 0 60 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 14C10 10 14 10 18 14" stroke="#2f2b26" stroke-width="2.8" stroke-linecap="round"/><path d="M24 10C28 6 32 6 36 10" stroke="#2f2b26" stroke-width="2.8" stroke-linecap="round"/><path d="M42 14C46 10 50 10 54 14" stroke="#2f2b26" stroke-width="2.8" stroke-linecap="round"/></svg>
+                <img src="./кошка4.jpg" alt="Наша кошка" />
+                </div>
+              <div class="pet-photo reveal reveal-delay-2 tall">
+                <svg class="sketch-diamond" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L31 16L20 34L9 16L20 6Z" stroke="#2f2b26" stroke-width="2.8" stroke-linejoin="round"/></svg>
+                <img src="./собака3.jpg" alt="Наша собака" />
+                </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+
+      <section class="section reveal">
+        <svg class="section-decor top-left" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 4L27 18L42 24L27 30L24 44L20 30L6 24L20 18L24 4Z" stroke="#2f2b26" stroke-width="2.6" stroke-linejoin="round"/></svg>
+        <div class="ambient-sparkle gold sparkle-timing" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L22.5 17.5L34 20L22.5 22.5L20 34L17.5 22.5L6 20L17.5 17.5L20 6Z" fill="currentColor"/></svg>
+        </div>
+        <span class="eyebrow">План дня</span>
+        <h2>Тайминг</h2>
+        <div class="timeline">
+          <div class="timeline-path" aria-hidden="true">
+            <svg viewBox="0 0 40 760" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 0C28 26 8 52 18 78C28 104 8 130 18 156C28 182 8 208 18 234C28 260 8 286 18 312C28 338 8 364 18 390C28 416 8 442 18 468C28 494 8 520 18 546C28 572 8 598 18 624C28 650 8 676 18 702C28 728 12 744 18 760" stroke="url(#timelineMain)" stroke-width="1.9" stroke-linecap="round" fill="none"/>
+              <path d="M14 0C24 26 4 52 14 78C24 104 4 130 14 156C24 182 4 208 14 234C24 260 4 286 14 312C24 338 4 364 14 390C24 416 4 442 14 468C24 494 4 520 14 546C24 572 4 598 14 624C24 650 4 676 14 702C24 728 8 744 14 760" stroke="url(#timelineSoft)" stroke-width="0.9" stroke-linecap="round" fill="none" opacity="0.35"/>
+              <path d="M22 0C32 26 12 52 22 78C32 104 12 130 22 156C32 182 12 208 22 234C32 260 12 286 22 312C32 338 12 364 22 390C32 416 12 442 22 468C32 494 12 520 22 546C32 572 12 598 22 624C32 650 12 676 22 702C32 728 16 744 22 760" stroke="url(#timelineSoft)" stroke-width="0.9" stroke-linecap="round" fill="none" opacity="0.28"/>
+              <defs>
+                <linearGradient id="timelineMain" x1="18" y1="0" x2="18" y2="760" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#d92f7c"/>
+                  <stop offset="0.5" stop-color="#f28a3c"/>
+                  <stop offset="1" stop-color="#d92f7c"/>
+                </linearGradient>
+                <linearGradient id="timelineSoft" x1="18" y1="0" x2="18" y2="760" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#f6b483"/>
+                  <stop offset="0.5" stop-color="#f2dde2"/>
+                  <stop offset="1" stop-color="#f6b483"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div class="timeline-item optional reveal reveal-delay-1">
+            <div class="time">09:50</div>
+            <div>
+              <div class="optional-badge">Необязательно</div>
+              <strong>ЗАГС</strong>
+              <p>Строго по желанию — будем рады тем, кто захочет разделить с нами самое начало дня.</p>
+              <a class="link" href="https://yandex.com/maps/-/CPCJMB1J" target="_blank" rel="noopener noreferrer">Открыть на карте</a>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal reveal-delay-1">
+            <div class="time">15:00</div>
+            <div>
+              <strong>Сбор гостей в «Вознесенской слободе» — «Косогор»</strong>
+              <p>Встречаемся, обнимаемся и спокойно настраиваемся на красивый вечер.</p>
+              <a class="link" href="https://yandex.com/maps/-/CPCriI0N" target="_blank" rel="noopener noreferrer">Открыть на карте</a>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal reveal-delay-2">
+            <div class="time">15:30</div>
+            <div>
+              <strong>Начало праздника</strong>
+              <p>Церемония, тёплые слова, бокалы, объятия и первые красивые кадры вечера.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal reveal-delay-2">
+            <div class="time">17:30</div>
+            <div>
+              <strong>Развлечения и танцы</strong>
+              <p>Вечер набирает темп: музыка, ведущий, танцы, конкурсы, тосты и всё то, за что мы любим большие праздники.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal reveal-delay-2">
+            <div class="time">20:00</div>
+            <div>
+              <strong>Туса друзей без родителей</strong>
+              <p>Переходим к более свободной части вечера: музыка, общение и настроение до 23:00.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal reveal-delay-3">
+            <div class="time">23:00</div>
+            <div>
+              <strong>Завершение вечера</strong>
+              <p>Обнимаемся напоследок и красиво провожаем этот день.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <svg class="section-decor top-right" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 40C22 37 7 28 7 16C7 10 11 6 17 6C21 6 24 8 24 12C24 8 27 6 31 6C37 6 41 10 41 16C41 28 26 37 24 40Z" stroke="#2f2b26" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="ambient-sparkle berry sparkle-vibes" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 5L23 17L35 20L23 23L20 35L17 23L5 20L17 17L20 5Z" fill="currentColor"/></svg>
+        </div>
+        <span class="eyebrow">Атмосфера вечера</span>
+        <h2>Что вас ждёт</h2>
+        <p>Мы мечтаем о вечере, в котором будет всё, что любим сами: тёплая церемония, музыка, танцы, ведущий, конкурсы, много общения, красивые детали и свободная часть праздника ближе к ночи. Скорее всего кальянная зона будет уже к этапу тусы без родителей, но, возможно, появится и чуть раньше.</p>
+        <p class="dress-tip">И ещё одна просьба, которая поможет сделать вечер по-настоящему нашим общим: добавьте в анкете ниже 5 треков, которые вам особенно хотелось бы услышать на свадьбе.</p>
+      </section>
+
+      <section class="section reveal">
+        <svg class="section-decor bottom-right" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 34C18 26 20 16 24 10C28 16 30 26 38 34" stroke="#2f2b26" stroke-width="2.8" stroke-linecap="round"/><path d="M18 18C20 22 22 24 24 26C26 24 28 22 30 18" stroke="#2f2b26" stroke-width="2.8" stroke-linecap="round"/></svg>
+        <div class="ambient-sparkle gold sparkle-vibes" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 5L23 17L35 20L23 23L20 35L17 23L5 20L17 17L20 5Z" fill="currentColor"/></svg>
+        </div>
+        <span class="eyebrow">Dress code</span>
+        <h2>Палитра вечера</h2>
+        <p>Референс вечера для нас — живые цветы, тёплый закат, фуксия, коралл, апельсиновый и нежные сливочно-персиковые оттенки. Хочется, чтобы образы выглядели ярко, но благородно, поэтому собрали палитру, которая поддержит атмосферу и при этом останется элегантной.</p>
+
+        <div class="dress-layout">
+          <div class="dress-card reveal reveal-delay-1">
+            <svg class="section-decor top-right" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 40C22 37 7 28 7 16C7 10 11 6 17 6C21 6 24 8 24 12C24 8 27 6 31 6C37 6 41 10 41 16C41 28 26 37 24 40Z" stroke="#2f2b26" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div class="dress-card-head">
+              <h3>Для девушек</h3>
+              <p>яркие цветочные акценты и тёплая нежная база</p>
+            </div>
+            <div class="palette women" aria-label="Палитра для девушек">
+              <div class="swatch"><div class="swatch-color" style="background:#d92f7c;"></div><span>фуксия</span></div>
+              <div class="swatch"><div class="swatch-color" style="background:#c33967;"></div><span>ягодный</span></div>
+              <div class="swatch"><div class="swatch-color" style="background:#e85b5b;"></div><span>коралловый</span></div>
+              <div class="swatch"><div class="swatch-color" style="background:#f28a3c;"></div><span>апельсиновый</span></div>
+              <div class="swatch"><div class="swatch-color" style="background:#efbc8f;"></div><span>тёплый персик</span></div>
+              <div class="swatch"><div class="swatch-color" style="background:#f7ddd9;"></div><span>сливочно-розовый</span></div>
+              <div class="swatch"><div class="swatch-color" style="background:#f2dde2;"></div><span>пудровый</span></div>
+              <div class="swatch"><div class="swatch-color" style="background:#5a5b2d;"></div><span>оливковый акцент</span></div>
+            </div>
+            <p class="dress-tip">Подойдут платья, костюмы, юбки и однотонные комплекты в цветочной палитре. Лучше избегать холодных синих оттенков, неона и слишком жёстких контрастов, чтобы образы красиво собирались в общую картинку.</p>
+            <p class="dress-warning"><strong>Просим не выбирать белый и близкие к нему оттенки:</strong> молочный, ivory, шампань и почти белый. Эти цвета оставляем для невесты.</p>
+          </div>
+
+          <div class="dress-card reveal reveal-delay-2">
+            <svg class="section-decor top-right" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 34C14 24 18 16 24 8C30 16 34 24 40 34" stroke="#2f2b26" stroke-width="2.8" stroke-linecap="round"/><path d="M17 20H31" stroke="#2f2b26" stroke-width="2.8" stroke-linecap="round"/></svg>
+            <div class="dress-card-head">
+              <h3>Для мужчин</h3>
+              <p>тёмная база, тёплые натуральные оттенки и один цветовой акцент</p>
+            </div>
+            <div class="palette men" aria-label="Палитра для мужчин">
+              <div class="swatch"><div class="swatch-color" style="background:#1a1a1a;"></div><span>чёрный</span></div>
+              <div class="swatch"><div class="swatch-color" style="background:#3f4032;"></div><span>глубокий оливковый</span></div>
+              <div class="swatch"><div class="swatch-color" style="background:#5f4b3a;"></div><span>тёмно-коричневый</span></div>
+              <div class="swatch"><div class="swatch-color" style="background:#8b7d6b;"></div><span>тауп</span></div>
+              <div class="swatch"><div class="swatch-color" style="background:#d7b898;"></div><span>песочный</span></div>
+              <div class="swatch"><div class="swatch-color" style="background:#efbc8f;"></div><span>тёплый беж</span></div>
+              <div class="swatch"><div class="swatch-color" style="background:#dd6d3e;"></div><span>терракотовый акцент</span></div>
+              <div class="swatch"><div class="swatch-color" style="background:#c33967;"></div><span>ягодный акцент</span></div>
+              <div class="swatch"><div class="swatch-color" style="background:#e85b5b;"></div><span>коралловый акцент</span></div>
+            </div>
+            <p class="dress-tip">Хорошо подойдут рубашки, поло, пиджаки и брюки в спокойной тёплой базе.</p>
+            <p class="dress-warning"><strong>Белый total look тоже просим не выбирать</strong> — лучше остановиться на тёплой базе, тёмных оттенках или одном цветном акценте.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <svg class="section-decor top-left" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 20H34V38H14V20Z" stroke="#2f2b26" stroke-width="2.8"/><path d="M24 20V38" stroke="#2f2b26" stroke-width="2.8"/><path d="M10 20H38V14H10V20Z" stroke="#2f2b26" stroke-width="2.8"/><path d="M19 14C16 14 14 12 14 10C14 8 16 6 18 6C21 6 23 9 24 14" stroke="#2f2b26" stroke-width="2.8" stroke-linecap="round"/><path d="M29 14C32 14 34 12 34 10C34 8 32 6 30 6C27 6 25 9 24 14" stroke="#2f2b26" stroke-width="2.8" stroke-linecap="round"/></svg>
+        <div class="ambient-sparkle berry sparkle-hero" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 4L22.8 16.8L36 20L22.8 23.2L20 36L17.2 23.2L4 20L17.2 16.8L20 4Z" fill="currentColor"/></svg>
+        </div>
+        <span class="eyebrow">Подарки</span>
+        <h2>Что нам хотелось бы получить от вас</h2>
+        <p class="gift-text">Ваше тепло и присутствие — главное для нас. А подарком пусть станет конверт.</p>
+      </section>
+
+      <section class="section reveal">
+        <h2>Детали</h2>
+        <p>Хотите сделать незабываем сюрприз в день торжества? Обращайтесь к нашему ведущему: <a class="link" href="tel:+79005900001">+7-900-590-00-01</a> Илья</p>
+        <p class="details-note">Если у вас есть вопрос по дресс-коду, можно написать Дане: <a class="link" href="tel:+79049595344">+7-904-959-53-44</a> или Диме: <a class="link" href="tel:+79040319511">+7-904-031-95-11</a>.</p>
+      </section>
+
+      <section class="section reveal">
+        <svg class="section-decor bottom-left" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="18" cy="18" r="6" stroke="#2f2b26" stroke-width="2.8"/><path d="M28 16L31 19L38 12" stroke="#2f2b26" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 34C12 29 16 26 22 26C25 26 28 27 30 30" stroke="#2f2b26" stroke-width="2.8" stroke-linecap="round"/></svg>
+        <div class="ambient-sparkle gold sparkle-timing" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L22.5 17.5L34 20L22.5 22.5L20 34L17.5 22.5L6 20L17.5 17.5L20 6Z" fill="currentColor"/></svg>
+        </div>
+        <span class="eyebrow">Анкета гостя</span>
+        <h2>Дайте знать</h2>
+        <p>Пожалуйста, заполните форму, чтобы мы всё красиво и точно подготовили.</p>
+
+        <!--
+          Интеграция с Google Forms:
+          1. Создай форму в Google Forms.
+          2. Нажми "Отправить" -> значок ссылки.
+          3. Возьми formResponse URL.
+          4. Замени action ниже.
+          5. У каждого input/select замени name="entry.xxxxx" на реальные entry ID из формы.
+        -->
+        <form class="rsvp reveal reveal-delay-1" action="https://docs.google.com/forms/d/e/1FAIpQLSed_iDg3eNkhZ2OEvaShrQJKDDB9cHWbnPzlaMmOUNEzbq4Gg/formResponse" method="POST" target="_blank">
+          <div class="field">
+            <label for="firstName">Имя</label>
+            <input id="firstName" name="entry.1714255199" type="text" placeholder="Введите имя" required />
+          </div>
+
+          <div class="field">
+            <label for="lastName">Фамилия</label>
+            <input id="lastName" name="entry.448773654" type="text" placeholder="Введите фамилию" required />
+          </div>
+
+          <div class="field">
+            <label for="attendance">Будете ли на празднике?</label>
+            <select id="attendance" name="entry.359684189" required>
+              <option value="" selected disabled>Выберите вариант</option>
+              <option value="Приду">Приду</option>
+              <option value="Не приду">Не приду</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="registryOffice">Пойдете в ЗАГС?</label>
+            <select id="registryOffice" name="entry.332747212" required>
+              <option value="" selected disabled>Выберите вариант</option>
+              <option value="Приду">Приду</option>
+              <option value="Не приду">Не приду</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="tracks">5 треков для вечера</label>
+            <textarea id="tracks" name="entry.1096807763" placeholder="Напишите 5 треков, которые вам хотелось бы услышать на свадьбе"></textarea>
+          </div>
+
+          <button class="submit" type="submit">Отправить ответ</button>
+        </form>
+      </section>
+
+      <section class="section footer-note reveal">
+        С любовью и предвкушением большого дня ✦
+      </section>
+    </article>
+  </main>
+  <script>
+    const revealItems = document.querySelectorAll(
+      '.section.reveal:not(.is-visible), .pet-photo.reveal:not(.is-visible), .timeline-item.reveal:not(.is-visible), .dress-card.reveal:not(.is-visible), .rsvp.reveal:not(.is-visible)'
+    );
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        });
+      }, {
+        threshold: 0.14,
+        rootMargin: '0px 0px -8% 0px'
+      });
+
+      revealItems.forEach((item) => observer.observe(item));
+    } else {
+      revealItems.forEach((item) => item.classList.add('is-visible'));
+    }
+  </script>
+</body>
+</html>

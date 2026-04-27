@@ -1021,8 +1021,15 @@
         right: -76px;
       }
       .pet-side-grid {
-        grid-template-columns: 84px 1fr 84px;
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .pet-stack {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 12px;
+      }
+      .pet-text-center {
+        max-width: none;
       }
       .looks,
       .palette.women,
@@ -1063,11 +1070,13 @@
       }
       .hero-photo { aspect-ratio: 4 / 5.2; }
       .pet-side-grid {
-        grid-template-columns: 72px 1fr 72px;
+        gap: 14px;
+      }
+      .pet-stack {
         gap: 10px;
       }
-      .pet-photo { min-height: 110px; }
-      .pet-photo.tall { min-height: 146px; }
+      .pet-photo { min-height: 124px; }
+      .pet-photo.tall { min-height: 156px; }
       .looks {
         grid-template-columns: 1fr;
       }
@@ -1196,7 +1205,7 @@
                 </div>
             </div>
             <div class="pet-text-center">
-              <p>Для нас особенно ценно провести этот день рядом с любимыми людьми — в тёплой, красивой и очень живой атмосфере. Нам хочется много объятий, смеха, разговоров и счастливых моментов, которые мы разделим вместе с вами. С нами на празднике будет собака, поэтому, если у вас есть аллергия, пожалуйста, не забудьте таблетки. А дома тем временем останется кошка — хранить порядок, контролировать обстановку и мысленно следить, чтобы всё прошло идеально.</p>
+              <p>Для нас особенно ценно провести этот день рядом с любимыми людьми. С нами на празднике будет собака, поэтому, если у вас есть аллергия, пожалуйста, не забудьте таблетки. А дома тем временем останется кошка — хранить порядок, контролировать обстановку и мысленно следить, чтобы всё прошло идеально.</p>
             </div>
             <div class="pet-stack">
               <div class="pet-photo reveal reveal-delay-1">
